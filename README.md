@@ -1,6 +1,6 @@
 ### Email Extractor Web App
 + Extract emails and phone numbers from documents using regex
-+ I added some new Futures to this project create by JCharisTech 
++ I added some new Functionality to this project create by JCharisTech 
 ##### Requirement
 + Flask
 + Python
