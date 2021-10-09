@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Extractor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="main.js"></script>
+</head>
+<body class="bg-light">
+    <h1 class="text-center text-success  bg-dark p-3">Extract Anything</h1>
+<br/>
+    <div class="container">
+        
+        <form method="POST" action="/process">
+            <div class="form-group">
+                    <label>Enter Your Input Text</label>
+            <textarea type="text" rows="5" cols="5" class="form-control"  name="rawtext" required="true">   </textarea>
+            <br/>
+            <select class="form-control" required="" name="taskoption">
+              <option selected>Choose Action</option>
+              <option value="email">Email</option>
+              <option value="phone">Phone</option>
+              <option value="wa_groups">WhatsApp Groups</option>
+              <option value="wa_me">WhatsApp Numbers</option>
+              <option value="t_me">Telegram Groups</option>
+              <option value="other_links_http">Links: http</option>
+              <option value="other_links_https">Links: https</option>
+            </select>
+            <br/>
+            <button type="reset" class="btn btn-primary"><i class="fa fa-eraser"></i> Clear</button>
+            <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+            <a href="/" class="btn btn-warning"><i class="fa fa-new"></i> Try Another</a>
+        </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+        <p class="alert-heading text-lg"><b>Results</b></p>
+        <p>Found :{{num_of_results}}</p>
+        <ul>{% for i in results %}
+            <li>{{i}}</li>
+            {%endfor %}
+        </ul>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
